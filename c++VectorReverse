@@ -1,0 +1,57 @@
+/******************************************************************************
+1.Program description - This program will take a vector, 
+  and display the vector in reverse
+
+2.Author - Kacey Woods
+
+3.Date - 4/25/20
+*******************************************************************************/
+
+#include <iostream>  
+#include <vector>
+using namespace std;
+
+//prints out the vector
+template<class T>
+void printVec( vector<T> super )
+{
+    for( int i = 0 ; i < super.size(); i++ )
+    cout << super.at(i) << " ";
+}
+
+//prints out the vector in reverse recursivly
+template<class T>
+T VectReverse( vector <T> super, T size )
+{
+    if( size < 0 ) return 0;
+    else{
+        cout << super.at(size) << " ";
+        return VectReverse( super , size-1 );
+    }
+}
+
+//MAIN
+int main()
+{
+
+vector<double> vec;
+vec.push_back(1.11);
+vec.push_back(2.22);
+vec.push_back(3.33);
+vec.push_back(4.44);
+vec.push_back(5.55);
+vec.push_back(6.66);
+
+cout<<"The vector before reverse is: "; 
+printVec(vec);
+cout << endl;
+cout <<"The vector printed out in reverse is: ";
+
+//gets the size of the vector currently,
+//then subtracts one to get the number of indexes of the vector
+double size = vec.size()-1;
+VectReverse( vec , size );
+return 0;
+
+}
+//END OF MAIN
