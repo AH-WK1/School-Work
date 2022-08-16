@@ -1,0 +1,50 @@
+/******************************************************************************
+1.Program description - Main will ask for two numbers as "a" and "b". "a" has 
+to be bigger than "b" or the main will ask you to try again. The function 
+will then find the greatest common denomonator of the two and print it out.
+
+2.Author - Kacey Woods
+
+3.Date - 4/18/20
+
+*******************************************************************************/
+
+#include <iostream>  
+using namespace std;
+
+//FUNCTION PROTOTYPE
+int GCD(int , int );
+
+//MAIN
+int main(void)
+{
+    int a = 0;
+    int b = 0;
+    
+    cout <<"Make sure the first one is bigger or equal to the second number. "
+    <<endl<<"Enter the first of the two numbers: ";
+    cin>>a;
+    cout<<"Enter the second number: ";
+    cin>>b;
+    
+    if ( b > a )
+    {
+        while( b > a )
+        {
+         cout<< "\"a\" has to be bigger or equal to \"b\", try again :D" << endl;
+         cin>>a>>b;
+        }
+    }
+    cout<<"The GCD of the two numbers is "<< GCD(a,b);
+    
+}
+//END OF MAIN
+
+//FUNCTION DECLARATION
+int GCD(int a, int b)
+{
+if ( b==0 ) return a;
+return GCD( b , a % b ) ;
+}
+
+
