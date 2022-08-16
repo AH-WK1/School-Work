@@ -1,0 +1,38 @@
+/*******************************************************************************
+1. Program description - Takes input file in commmand line (with two numbers on each line), 
+                        then returns the line # and sum of the two numbers
+2. Author - Kacey Woods
+3. Date - 8/29f/20
+*******************************************************************************/
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+    
+    ifstream file(argv[1]); //Opens file for reading
+    
+    int x , y , z ; // For addition
+    int ln = 1 ;    // Line number
+    
+  /*  if(!file.is_open()) {
+        perror("The file didn't open correctly");
+        exit(EXIT_FAILURE);
+        }
+        cout << argv[1] << " is open/ready for use." << endl;
+        cout<< argv[1]<<" ";
+  */   
+        while ( file >> x ) {   // Reads file number by number
+        file >> y ;             // Second # of the line
+        z = x + y ;             // Addition of 1st and 2nd #
+        cout << ln << " " << z << endl ; // Displays to user line # and sum
+        ln++ ;  //Increments the line #
+        
+        }
+      
+        file.close(); // Closes file
+        exit(EXIT_SUCCESS); // Exits program
+    }
+
+
+
