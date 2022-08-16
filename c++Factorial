@@ -1,0 +1,64 @@
+/******************************************************************************
+1. Program description - This program will ask the user for two numbers,
+                          make sure they are valid numbers,
+                          take the factorial of both, then divide the highest from the lowest
+2. Author - Kacey Woods
+3. Date - 2/18/20
+4. Function description - Perm 
+*******************************************************************************/
+#include <iostream>  
+using namespace std;
+
+/**************FUNCTION PROTOTYPE**************/
+void Perm(int , int );
+
+int main()
+{
+    //declared variables
+int n = 0;
+int k = 0;
+
+while( n <= 1 )//Getting n from user
+{
+    cout << "Enter in the the first number" <<endl;
+    cin >> n;
+        if(n <= 1)//Verifying if n is valid output
+        {
+        cout << "Invalid input" << endl;
+        }
+}
+while(k <= 1 || k > n)//Getting k from user
+{
+    cout << "Enter in the second number" << endl;
+    cin >> k;
+        if(k <= 1 || k > n)//Verifying if k is valid output
+        {
+            cout << "Invalid input" << endl;
+        }
+}
+    /**************FUNCTION CALL**************/
+Perm( n , k );
+    return 0;
+}
+
+    /**************FUNCTION DEFINITION**************/
+void Perm(int n, int k)
+{
+    int i = 0;
+    int nFact = 1;
+    int kFact = 1;
+    float result = 0;
+    
+    for(i=2 ; i <= n ; i++)
+    {
+        nFact *= i;
+    }
+    for(i=2 ; i <= k ; i++)
+    {
+        kFact *= i;
+    }
+    result = (float)nFact/kFact;
+    cout << "The result is " << result << endl;
+    return ;
+}
+
